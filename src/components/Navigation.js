@@ -3,13 +3,15 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const Navigation = () => {
-  const handlePopOver = () => {};
+  const [open, setOpen] = useState(false);
+  const handlePopOver = () => {
+    setOpen(!open);
+  };
   return (
     <>
       <Disclosure as="nav" className="bg-gray-800">
@@ -149,7 +151,7 @@ const Navigation = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              to={'/myleaves'}
+                              to={"/myleaves"}
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
@@ -163,14 +165,14 @@ const Navigation = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                            to={"/holiday"}
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Holiday
-                          </Link>
+                              to={"/holiday"}
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
+                            >
+                              Holiday
+                            </Link>
                           )}
                         </Menu.Item>
                       </Menu.Items>
@@ -211,47 +213,47 @@ const Navigation = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                            to={"/edit-profile"}
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Edit Profile
-                          </Link>
+                              to={"/edit-profile"}
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
+                            >
+                              Edit Profile
+                            </Link>
                           )}
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                            to={"/edit-skills"}
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Edit Personal Skills
-                          </Link>
+                              to={"/edit-skills"}
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
+                            >
+                              Edit Personal Skills
+                            </Link>
                           )}
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                            to={"/edited-skills"}
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Edit Skills
-                          </Link>
+                              to={"/edited-skills"}
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
+                            >
+                              Edit Skills
+                            </Link>
                           )}
                         </Menu.Item>
                         <hr></hr>
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              to='/desscussion-desk'
+                              to="/desscussion-desk"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
@@ -264,7 +266,7 @@ const Navigation = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              to='/help-desk'
+                              to="/help-desk"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
@@ -277,7 +279,7 @@ const Navigation = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              to='/logout'
+                              to="/logout"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
@@ -296,6 +298,11 @@ const Navigation = () => {
           </>
         )}
       </Disclosure>
+
+      {open && (
+      <div>
+      </div>
+      )}
     </>
   );
 };
