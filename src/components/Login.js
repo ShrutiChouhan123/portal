@@ -42,9 +42,9 @@ const Login = () => {
       console.log("Form validation failed.");
     }
     setInitialState({
-        email:'',
-        password:''
-    })
+      email: "",
+      password: "",
+    });
   };
 
   return (
@@ -62,7 +62,7 @@ const Login = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#"  onSubmit={handleSubmit}>
+          <form className="space-y-6" action="#" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="email"
@@ -72,7 +72,7 @@ const Login = () => {
               </label>
               <div className="mt-2">
                 <input
-                 value={initialStateData.email}
+                  value={initialStateData.email}
                   onChange={handleChange}
                   id="email"
                   name="email"
@@ -81,7 +81,6 @@ const Login = () => {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-
               </div>
             </div>
 
