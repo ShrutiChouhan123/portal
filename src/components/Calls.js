@@ -35,7 +35,7 @@ export const Calls = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="bg-white">
                 {people.map((person) => (
                   <tr key={person.email} className="hover:bg-gray-100">
                     <td className="px-6 py-4 whitespace-nowrap">
